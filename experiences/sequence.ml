@@ -22,17 +22,23 @@
 module NarrativeStep : sig
 
   type ('current, 'next) t
+  type first
+  type middle
+
   val followed_by : ('a, 'b) t -> ('b, 'c) t -> ('b, 'c) t
   val (>>) : ('a, 'b) t -> ('b, 'c) t -> ('b, 'c) t
 
-  val first :  string -> ([`first], [`middle]) t
-  val middle : string -> ([`middle], [`last]) t
-  val last : string -> ([`last], [`void]) t
+  val first :  string -> (first, middle) t
+  val middle : string -> (middle, middle) t
+  val last : string -> (middle, [`void]) t
 
 
 end = struct
 
   type ('current, 'next) t = string
+  type first = [`first]
+  type middle = [`middle]
+
   let followed_by a b = b
   let ( >> ) = followed_by
 
@@ -45,6 +51,6 @@ end
 include NarrativeStep
 
 let _ =
-  first "Preparation"
-  >> middle "Adventure"
+  first "Adventure step 1"
+  >> middle "Adventure step 2"
   >> last "End of the story"
