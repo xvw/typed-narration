@@ -27,7 +27,7 @@ module NarrativeStep : sig
   val (-->) : ('a, 'b) t -> ('b, 'c) t -> ('b, 'c) t
 
   val first :  string -> ([<`first], [<`middle]) t
-  val middle : string -> ([<`middle | `stop], [<`middle | `stop]) t
+  val middle : string -> ([<`middle], [< `middle | `stop]) t
   val last : string -> ([< `stop], [<`void]) t
 
 
