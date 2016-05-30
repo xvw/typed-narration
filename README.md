@@ -1,2 +1,5 @@
 # typed-narration
-Some implementation about static narration checker
+
+> Tout ce qui est présent ici est vraiment en phase préliminaire...
+
+Ce dépôt servira de référence aux articles en rapport avec la narration présentés sur cette page : [https://medium.com/@xvw](mailto:https://medium.com/@xvw)
