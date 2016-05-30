@@ -21,14 +21,14 @@
 
 module NarrativeStep : sig
 
-  type (+'current, +'next) t
+  type (-'current, -'next) t
 
   val followed_by : ('a, 'b) t -> ('b, 'c) t -> ('b, 'c) t
   val (-->) : ('a, 'b) t -> ('b, 'c) t -> ('b, 'c) t
 
-  val first :  string -> ([`first], [`middle | `stop]) t
-  val middle : string -> ([`middle | `stop], [`middle | `stop]) t
-  val last : string -> ([`middle | `stop], [`void]) t
+  val first :  string -> ([<`first], [<`middle]) t
+  val middle : string -> ([<`middle | `stop], [<`middle | `stop]) t
+  val last : string -> ([< `stop], [<`void]) t
 
 
 end = struct
@@ -50,4 +50,4 @@ let _ =
   first "Adventure step 1"
   --> middle "Adventure step 2"
   --> middle "Adventure step 3"
-  --> last "End of the adventure"
+  --> last "End of the adventure (step 4)"
