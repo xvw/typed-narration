@@ -1,0 +1,10 @@
+Name: typed-narration
+Version: 0.1
+Synopsis: Small experimentation about narrative generation
+Authors: Xavier Van de Woestyne <xaviervdw@gmail.com>
+License: GPL
+Description: Small experiences about narrative generation
+Homepage: http://github.com/xvw/typed-narration
+OASISFormat: 0.4
+BuildTools: ocamlbuild
+Plugins: META (0.4), DevFiles (0.4)

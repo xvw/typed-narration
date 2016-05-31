@@ -1,5 +1,5 @@
 (*
- * Experience about Typed Narration
+ * Library for TypedNarration developpement
 *  This source code is just experimentation, not a structured project
  *
  * Copyright (C) 2015  Xavier Van de Woestyne <xaviervdw@gmail.com>
@@ -20,40 +20,13 @@
  *
 *)
 
-module NarrativeStep : sig
+module List =
+struct
 
-  type (-'current, -'next) t
-
-  val followed_by : ('a, 'b) t -> ('b, 'c) t -> ('b, 'c) t
-  val (-->) : ('a, 'b) t -> ('b, 'c) t -> ('b, 'c) t
-
-  val first :  string -> ([<`first], [<`middle]) t
-  val middle : string -> ([<`middle], [< `middle | `stop]) t
-  val last : string -> ([< `stop], [<`void]) t
-
-
-
-end = struct
-
-  type ('current, 'next) t = string
-
-  let followed_by a b = b
-  let ( --> ) = followed_by
-
-  let first x = x
-  let middle x = x
-  let last x = x
+  include List
 
   let reduce f = function
     | [] -> raise (Invalid_argument "List is empty")
-    | x :: xs -> List.fold_left f x xs
+    | x :: xs -> fold_left f x xs
 
 end
-
-include NarrativeStep
-
-let _ =
-  first "Adventure step 1"
-  --> middle "Adventure step 2"
-  --> middle "Adventure step 3"
-  --> last "End of the adventure (step 4)"
