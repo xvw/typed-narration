@@ -1,5 +1,6 @@
 (*
  * Experience about Typed Narration
+*  This source code is just experimentation, not a structured project
  *
  * Copyright (C) 2015  Xavier Van de Woestyne <xaviervdw@gmail.com>
  *
