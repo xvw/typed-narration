@@ -36,5 +36,23 @@ end = struct
   let departure s = s
   let d s = s
   let e s = s
+  let f s = s
+  let g s = s
+  let h s = s
+  let i s = s
+  let j s = s
+  let k s = s
+  let return s = s
+  let pr s = s
+  let rs s = s
+  let o s = s
+  let l s = s
+  let m s = s
+  let n s = s
+  let q s = s
+  let ex s = s
+  let t s = s
+  let u s = s
+  let w s = s
 
 end
