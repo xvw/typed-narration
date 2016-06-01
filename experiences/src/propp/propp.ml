@@ -1,5 +1,5 @@
 (*
- * Library for TypedNarration developpement
+ * Experience about Typed Narration
 *  This source code is just experimentation, not a structured project
  *
  * Copyright (C) 2015  Xavier Van de Woestyne <xaviervdw@gmail.com>
@@ -19,3 +19,22 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
 *)
+
+module Functions :
+sig
+
+  type (-'current, -'next) t
+
+end = struct
+
+  type ('current, 'next) t = string
+
+  let a s = s
+  let a' s = s
+  let b s = s
+  let c s = s
+  let departure s = s
+  let d s = s
+  let e s = s
+
+end
