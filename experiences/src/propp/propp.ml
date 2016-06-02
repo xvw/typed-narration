@@ -24,10 +24,15 @@ module Functions :
 sig
 
   type (-'current, -'next) t
+  val followed_by : ('a, 'b) t -> ('b, 'c) t -> ('b, 'c) t
+  val (-->) : ('a, 'b) t -> ('b, 'c) t -> ('b, 'c) t
 
 end = struct
 
   type ('current, 'next) t = string
+
+  let followed_by a b = b
+  let ( --> ) = followed_by
 
   let a s = s
   let a' s = s
